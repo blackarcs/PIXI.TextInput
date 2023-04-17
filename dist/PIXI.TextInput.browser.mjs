@@ -10,7 +10,7 @@ export default class TextInput extends PIXI.Container {
         border: 'none',
         outline: 'none',
         transformOrigin: '0 0',
-        lineHeight: '1'
+        lineHeight: '1',
       },
       styles.input
     );
@@ -192,7 +192,7 @@ export default class TextInput extends PIXI.Container {
   _onInputKeyDown(e) {
     this._selection = [
       this._dom_input.selectionStart,
-      this._dom_input.selectionEnd
+      this._dom_input.selectionEnd,
     ];
 
     this.emit('keydown', e.keyCode);
@@ -365,7 +365,6 @@ export default class TextInput extends PIXI.Container {
     this.addChild(this._surrogate_mask);
 
     this._surrogate = new PIXI.Text('', {});
-    // this._surrogate.eventMode = 'static';
     this.addChild(this._surrogate);
     this.addChild(this._surrogate_hitbox);
 
@@ -580,7 +579,7 @@ export default class TextInput extends PIXI.Container {
       top: rect.top,
       left: rect.left,
       width: rect.width,
-      height: rect.height
+      height: rect.height,
     };
     bounds.left += window.scrollX;
     bounds.top += window.scrollY;
